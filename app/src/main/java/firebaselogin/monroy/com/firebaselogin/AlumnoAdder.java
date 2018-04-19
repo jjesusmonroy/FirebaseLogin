@@ -32,8 +32,7 @@ public class AlumnoAdder extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Alumno alumno = new Alumno(name.getText().toString(),nocontrol.getText().toString());
-                databaseReference.child(References.alumnoPreference).push().setValue(alumno);
-                Toast.makeText(AlumnoAdder.this, "new Alumno added", Toast.LENGTH_SHORT).show();
+                databaseReference.push().setValue(alumno);
                 clean();
             }
         });
